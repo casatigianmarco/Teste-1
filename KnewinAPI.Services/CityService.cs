@@ -38,7 +38,7 @@ namespace KnewinAPI.Services
             }
         }
 
-        public City GetByName(string name)
+        public List<City> GetByName(string name)
         {
             try
             {

@@ -1,0 +1,312 @@
+{
+	"info": {
+		"_postman_id": "f6e0a722-d93e-467a-b6e4-d9c7664d07ba",
+		"name": "KnewinCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"Knewin\",\n\t\"password\": \"Knewin@2019\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44359/api/Authenticate/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44359",
+					"path": [
+						"api",
+						"Authenticate",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllCities",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44359/api/city",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44359",
+					"path": [
+						"api",
+						"city"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJLbmV3aW4iLCJqdGkiOiI1MDMwYjM2Ni0wMzdiLTRhMGUtYWVlNC1lMDk4NTA2YThkMzIiLCJleHAiOjE1NzUyOTk4MTksImlzcyI6ImtuZXdpbiIsImF1ZCI6ImtuZXdpbiJ9.oWUEbDsNUEw0U-iLwKP42Sn0GT4K6K_gRiUg4yeWFGo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44359/api/city/6cdc43e3-b5ea-4953-ac82-791785963f78",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44359",
+					"path": [
+						"api",
+						"city",
+						"6cdc43e3-b5ea-4953-ac82-791785963f78"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByName",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJLbmV3aW4iLCJqdGkiOiI2YjdlMmIxMi1iYWU1LTQxMWItYmJkYi1hZmFmNzI0ZWZmOWQiLCJleHAiOjE1NzUzMDE3ODYsImlzcyI6ImtuZXdpbiIsImF1ZCI6ImtuZXdpbiJ9.OxIHoP55ZxRtjdeaCAJtXDtetCGagERk6Up7rszzdn4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44359/api/city/GetByName/Florianopolis",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44359",
+					"path": [
+						"api",
+						"city",
+						"GetByName",
+						"Florianopolis"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByBorder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJLbmV3aW4iLCJqdGkiOiI2YjdlMmIxMi1iYWU1LTQxMWItYmJkYi1hZmFmNzI0ZWZmOWQiLCJleHAiOjE1NzUzMDE3ODYsImlzcyI6ImtuZXdpbiIsImF1ZCI6ImtuZXdpbiJ9.OxIHoP55ZxRtjdeaCAJtXDtetCGagERk6Up7rszzdn4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44359/api/city/GetByBorder/Sao Jose",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44359",
+					"path": [
+						"api",
+						"city",
+						"GetByBorder",
+						"Sao Jose"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJLbmV3aW4iLCJqdGkiOiI2YjdlMmIxMi1iYWU1LTQxMWItYmJkYi1hZmFmNzI0ZWZmOWQiLCJleHAiOjE1NzUzMDE3ODYsImlzcyI6ImtuZXdpbiIsImF1ZCI6ImtuZXdpbiJ9.OxIHoP55ZxRtjdeaCAJtXDtetCGagERk6Up7rszzdn4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Santo Amaro\",\n    \"population\": 17500\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44359/api/city",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44359",
+					"path": [
+						"api",
+						"city"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SumPopulation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJLbmV3aW4iLCJqdGkiOiI2YjdlMmIxMi1iYWU1LTQxMWItYmJkYi1hZmFmNzI0ZWZmOWQiLCJleHAiOjE1NzUzMDE3ODYsImlzcyI6ImtuZXdpbiIsImF1ZCI6ImtuZXdpbiJ9.OxIHoP55ZxRtjdeaCAJtXDtetCGagERk6Up7rszzdn4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[ \r\n\"78f2c0ed-4530-4d3c-86c1-5582e98c4d1f\", \r\n\"6cdc43e3-b5ea-4953-ac82-791785963f78\"\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44359/api/city/PostSumPopulation",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44359",
+					"path": [
+						"api",
+						"city",
+						"PostSumPopulation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJLbmV3aW4iLCJqdGkiOiI1MDMwYjM2Ni0wMzdiLTRhMGUtYWVlNC1lMDk4NTA2YThkMzIiLCJleHAiOjE1NzUyOTk4MTksImlzcyI6ImtuZXdpbiIsImF1ZCI6ImtuZXdpbiJ9.oWUEbDsNUEw0U-iLwKP42Sn0GT4K6K_gRiUg4yeWFGo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"6cdc43e3-b5ea-4953-ac82-791785963f78\",\n    \"name\": \"Florianopolis\",\n    \"population\": 470000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44359/api/city/6cdc43e3-b5ea-4953-ac82-791785963f78",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44359",
+					"path": [
+						"api",
+						"city",
+						"6cdc43e3-b5ea-4953-ac82-791785963f78"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

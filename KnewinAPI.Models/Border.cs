@@ -1,6 +1,6 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace KnewinAPI.Models
 {
@@ -9,6 +9,7 @@ namespace KnewinAPI.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
         public string City { get; set; }
+        [JsonIgnore]
         public Guid CityId { get; set; }
     }
 }

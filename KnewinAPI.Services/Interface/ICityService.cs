@@ -7,7 +7,7 @@ namespace KnewinAPI.Services.Interface
     public interface ICityService
     {
         List<City> GetAll();
-        City GetByName(string name);
+        List<City> GetByName(string name);
         City GetById(Guid id);
         List<City> GetByBorder(string name);
         int Create(City city);

@@ -3,6 +3,7 @@ using KnewinAPI.Services.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
+using Newtonsoft.Json;
 using System;
 
 namespace Knewin.Controllers

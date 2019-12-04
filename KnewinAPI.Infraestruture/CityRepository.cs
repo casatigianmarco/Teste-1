@@ -4,6 +4,7 @@ using KnewinAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -21,6 +22,7 @@ namespace KnewinAPI.Infraestruture
         {
             return DbContext.City
                 .Include(b => b.Border)
+                .OrderBy(o => o.Name)
                 .ToList();
         }
 
@@ -31,12 +33,13 @@ namespace KnewinAPI.Infraestruture
                  .FirstOrDefault(c => c.Id == id);
         }
 
-        public City GetByName(string name)
+        public List<City> GetByName(string name)
         {
             return DbContext.City
+                 .FromSqlRaw(string.Format("Select * From dbo.City Where Name like '%{0}%' Collate Latin1_general_CI_AI", name))
                  .Include(b => b.Border)
-                 .Where(w => w.Name.Contains(name))
-                 .FirstOrDefault();
+                 .OrderBy(o => o.Name)
+                 .ToList();
         }
 
         public int Create(City city)
@@ -47,7 +50,8 @@ namespace KnewinAPI.Infraestruture
 
         public bool CityExists(string name)
         {
-            return DbContext.City.Where(w => w.Name.Contains(name)).Any();
+            var query = DbContext.City.FromSqlRaw(string.Format("Select * From dbo.City Where Name like '%{0}%' Collate Latin1_general_CI_AI", name));
+            return query.Any();
         }
 
         public int SumPopulation(Guid[] ids)
